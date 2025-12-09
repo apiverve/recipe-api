@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/recipe",
+  "version": "1.1.12",
+  "description": "Recipes is a simple tool for getting recipe information. It returns information on various recipes.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/recipe-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "recipes", "recipes api", "recipes tool", "recipes software", "recipes service"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/recipe-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/recipe?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
