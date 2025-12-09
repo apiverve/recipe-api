@@ -1,0 +1,92 @@
+openapi: 3.0.4
+info:
+  title: Recipe Generator
+  description: Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/recipe:
+    get:
+      summary: Generate Recipe
+      description: Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
+      operationId: recipe
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The name or description of the recipe you want to generate
+        example: chicken fajitas
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  name: Chicken Fajitas
+                  description: A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.
+                  ingredients:
+                  - 1.5 pounds boneless, skinless chicken breasts, sliced into strips
+                  - 1 red bell pepper, sliced
+                  - 1 green bell pepper, sliced
+                  - 1 yellow bell pepper, sliced
+                  - 1 large onion, sliced
+                  - 2 tablespoons olive oil
+                  - 1 packet (1 ounce) fajita seasoning
+                  - 1/2 cup water
+                  - 12 flour tortillas
+                  - 'Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro'
+                  instructions: >-
+                    1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.
+
+                    2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.
+
+                    3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.
+
+                    4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.
+
+                    5. Warm the tortillas according to package directions.
+
+                    6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.
+                  prep_time: 15 minutes
+                  cook_time: 20 minutes
+                  servings: 4
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
