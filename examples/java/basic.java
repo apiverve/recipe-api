@@ -1,4 +1,4 @@
-import com.apiverve.recipe.RecipesAPIClient;
+import com.apiverve.recipe.RecipeGeneratorAPIClient;
 import com.apiverve.recipe.APIResponse;
 import com.apiverve.recipe.APIException;
 import org.json.JSONObject;
@@ -9,15 +9,11 @@ import java.util.Map;
 public class BasicExample {
     public static void main(String[] args) {
         // Initialize the API client with your API key
-        RecipesAPIClient client = new RecipesAPIClient("YOUR_API_KEY_HERE");
+        RecipeGeneratorAPIClient client = new RecipeGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;name&quot;, &quot;cake&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
