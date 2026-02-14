@@ -1,7 +1,7 @@
 """
-Recipes API - Basic Usage Example
+Recipe Generator API - Basic Usage Example
 
-This example demonstrates the basic usage of the Recipes API.
+This example demonstrates the basic usage of the Recipe Generator API.
 API Documentation: https://docs.apiverve.com/ref/recipe
 """
 
@@ -14,17 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/recipe'
 
 def call_recipe_api():
     """
-    Make a GET request to the Recipes API
+    Make a GET request to the Recipe Generator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;name&#x27;: &#x27;cake&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
@@ -45,7 +42,7 @@ def call_recipe_api():
         return None
 
 if __name__ == '__main__':
-    print('📤 Calling Recipes API...\n')
+    print('📤 Calling Recipe Generator API...\n')
 
     result = call_recipe_api()
 
