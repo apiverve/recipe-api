@@ -1,7 +1,7 @@
 /**
- * Recipes API - Error Handling Example
+ * Recipe Generator API - Error Handling Example
  *
- * This example demonstrates proper error handling when using the Recipes API.
+ * This example demonstrates proper error handling when using the Recipe Generator API.
  * API Documentation: https://docs.apiverve.com/ref/recipe
  */
 
@@ -20,7 +20,7 @@ class APIError extends Error {
 /**
  * Make an API call with comprehensive error handling
  */
-async function callRecipesAPIWithErrorHandling(queryParams = {}) {
+async function callRecipeGeneratorAPIWithErrorHandling(queryParams = {}) {
   try {
     console.log('📤 Making API request...');
 
@@ -105,7 +105,7 @@ async function callWithRetry(maxRetries = 3, initialDelay = 1000) {
     try {
       console.log(`\n🔄 Attempt ${attempt}/${maxRetries}`);
 
-      const result = await callRecipesAPIWithErrorHandling({
+      const result = await callRecipeGeneratorAPIWithErrorHandling({
         // Your query parameters here
       });
 
