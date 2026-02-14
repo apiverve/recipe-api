@@ -7,20 +7,19 @@ declare module '@apiverve/recipe' {
   export interface recipeResponse {
     status: string;
     error: string | null;
-    data: RecipesData;
+    data: RecipeGeneratorData;
     code?: number;
   }
 
 
-  interface RecipesData {
-      count:   number;
-      recipes: Recipe[];
-  }
-  
-  interface Recipe {
-      instructions: string;
+  interface RecipeGeneratorData {
       name:         string;
+      description:  string;
       ingredients:  string[];
+      instructions: string;
+      prepTime:     string;
+      cookTime:     string;
+      servings:     number;
   }
 
   export default class recipeWrapper {
