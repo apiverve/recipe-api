@@ -1,6 +1,6 @@
-# Recipes API - Examples
+# Recipe Generator API - Examples
 
-This folder contains example code for using the Recipes API across different platforms.
+This folder contains example code for using the Recipe Generator API across different platforms.
 
 ## 📁 Examples Structure
 
@@ -52,6 +52,6 @@ var data = await response.Content.ReadAsStringAsync();
 
 ## 🆘 Need Help?
 
-- 📧 Email: support@apiverve.com
+- 📧 Email: hello@apiverve.com
 - 💬 Issues: [GitHub Issues](../../issues)
 - 📖 Docs: [https://docs.apiverve.com](https://docs.apiverve.com)
