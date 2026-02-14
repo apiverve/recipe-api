@@ -1,7 +1,7 @@
 /**
- * Basic Example - Recipes API
+ * Basic Example - Recipe Generator API
  *
- * This example demonstrates how to use the Recipes API.
+ * This example demonstrates how to use the Recipe Generator API.
  * Make sure to set your API key in the .env file or replace '[YOUR_API_KEY]' below.
  */
 
@@ -15,11 +15,11 @@ const api = new recipeAPI({
 
 // Example query
 var query = {
-  name: "cake"
+  name: "chicken fajitas"
 };
 
 // Make the API request using callback
-console.log('Making request to Recipes API...\n');
+console.log('Making request to Recipe Generator API...\n');
 
 api.execute(query, function (error, data) {
     if (error) {
