@@ -1,7 +1,7 @@
 /**
- * Recipes API - Basic Usage Example
+ * Recipe Generator API - Basic Usage Example
  *
- * This example demonstrates the basic usage of the Recipes API.
+ * This example demonstrates the basic usage of the Recipe Generator API.
  * API Documentation: https://docs.apiverve.com/ref/recipe
  */
 
@@ -9,16 +9,11 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/recipe';
 
 /**
- * Make a GET request to the Recipes API
+ * Make a GET request to the Recipe Generator API
  */
-async function callRecipesAPI() {
+async function callRecipeGeneratorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            name: &#x27;cake&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
@@ -49,7 +44,7 @@ async function callRecipesAPI() {
 }
 
 // Run the example
-callRecipesAPI()
+callRecipeGeneratorAPI()
   .then(result => {
     if (result) {
       console.log('\n📊 Final Result:');
