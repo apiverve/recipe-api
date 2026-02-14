@@ -1,12 +1,13 @@
-# Recipes API
+# Recipe Generator API
 
-Recipes is a simple tool for getting recipe information. It returns information on various recipes.
+Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
+[![npm version](https://img.shields.io/npm/v/@apiverve/recipe.svg)](https://www.npmjs.com/package/@apiverve/recipe)
 
-This is a Javascript Wrapper for the [Recipes API](https://apiverve.com/marketplace/recipe)
+This is a Javascript Wrapper for the [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -26,16 +27,16 @@ yarn add @apiverve/recipe
 
 ## Configuration
 
-Before using the Recipes API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com)
+Before using the Recipe Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
 ## Quick Start
 
-[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
 
-The Recipes API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe).
+The Recipe Generator API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe?utm_source=npm&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -59,7 +60,7 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  name: "cake"
+  name: "chicken fajitas"
 };
 
 api.execute(query, function (error, data) {
@@ -79,7 +80,7 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  name: "cake"
+  name: "chicken fajitas"
 };
 
 api.execute(query)
@@ -100,7 +101,7 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  name: "cake"
+  name: "chicken fajitas"
 };
 
     try {
@@ -121,33 +122,24 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "count": 1,
-    "recipes": [
-      {
-        "instructions": "Heat the oil in a large, non-stick frying pan or wok and stir-fry the chicken and peppers for 2 mins. Sprinkle over the spices and cook for 30 secs more, stirring. Tip the tomatoes into the pan and stir in the chipotle paste. Simmer for 5 mins or until the sauce is thick and glossy, stirring regularly. Stir in the spring onions and coriander, cook for 1 min more, then remove from the heat and leave to cool. Cut the tortillas into quarters, then cut each quarter into three pieces, so you have 36 triangles. Place 1 tsp of the chicken mixture and a little cheese at the widest end of a triangle. Roll the pointed end of the triangle around the filling and secure with a cocktail stick. Place on a baking tray lined with baking parchment. Fill and roll the other triangles. Cover with cling film and chill for up to 8 hrs until ready to reheat. To make the dip, mash all the ingredients in a bowl until almost smooth. Cover the surface of the dip with cling film and chill for up to 24 hrs. When ready to serve, heat oven to 200C/180C fan/gas 6. Uncover the fajitas and bake for 6-8 mins or until hot throughout. Serve with the guacamole.",
-        "name": "Mini Chicken Fajitas",
-        "ingredients": [
-          "2 tbsp sunflower oil",
-          "2 skinless chicken breasts, cut into 1½ cm/½ in chunks",
-          "1 red pepper, deseeded and cut into 1½ cm/½ in chunks",
-          "1 yellow pepper, deseeded and cut into 1½ cm/½ in chunks",
-          "1 tsp ground cumin",
-          "1 tsp ground coriander",
-          "¼ tsp hot chilli powder",
-          "227g can chopped tomatoes",
-          "2 tbsp chipotle paste",
-          "4 spring onions, trimmed and thinly sliced",
-          "large pack coriander, leaves chopped",
-          "3 large flour tortillas",
-          "75g ready-grated mozzarella",
-          "1 ripe avocado, stoned and peeled",
-          "juice 1 large lime",
-          "1 garlic clove, crushed",
-          "2 heaped tbsp finely chopped coriander",
-          "36 cocktail sticks"
-        ]
-      }
-    ]
+    "name": "Chicken Fajitas",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.",
+    "ingredients": [
+      "1.5 pounds boneless, skinless chicken breasts, sliced into strips",
+      "1 red bell pepper, sliced",
+      "1 green bell pepper, sliced",
+      "1 yellow bell pepper, sliced",
+      "1 large onion, sliced",
+      "2 tablespoons olive oil",
+      "1 packet (1 ounce) fajita seasoning",
+      "1/2 cup water",
+      "12 flour tortillas",
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro"
+    ],
+    "instructions": "1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.\n5. Warm the tortillas according to package directions.\n6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.",
+    "prep_time": "15 minutes",
+    "cook_time": "20 minutes",
+    "servings": 4
   }
 }
 ```
@@ -156,7 +148,7 @@ async function makeRequest() {
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=readme).
 
 ---
 
@@ -168,14 +160,14 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=readme), [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=readme), and [Refund Policy](https://apiverve.com/refund?utm_source=npm&utm_medium=readme).
 
 ---
 
 ## License
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2025 APIVerve, and EvlarSoft LLC
+Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
