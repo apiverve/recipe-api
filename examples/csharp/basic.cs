@@ -1,7 +1,7 @@
 /*
- * Recipes API - Basic Usage Example
+ * Recipe Generator API - Basic Usage Example
  *
- * This example demonstrates the basic usage of the Recipes API.
+ * This example demonstrates the basic usage of the Recipe Generator API.
  * API Documentation: https://docs.apiverve.com/ref/recipe
  */
 
@@ -14,29 +14,22 @@ using System.Linq;
 
 namespace APIVerve.Examples
 {
-    class RecipesExample
+    class RecipeGeneratorExample
     {
         private static readonly string API_KEY = Environment.GetEnvironmentVariable("APIVERVE_API_KEY") ?? "YOUR_API_KEY_HERE";
         private static readonly string API_URL = "https://api.apiverve.com/v1/recipe";
 
         /// <summary>
-        /// Make a GET request to the Recipes API
+        /// Make a GET request to the Recipe Generator API
         /// </summary>
-        static async Task<JsonDocument> CallRecipesAPI()
+        static async Task<JsonDocument> CallRecipeGeneratorAPI()
         {
             try
             {
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                // Query parameters
-                var queryParams &#x3D; new Dictionary&lt;string, string&gt; { [&quot;name&quot;] &#x3D; &quot;cake&quot; };
-
-                var queryString = string.Join("&",
-                    queryParams.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
-                var url = $"{API_URL}?{queryString}";
-
-                var response = await client.GetAsync(url);
+                var response = await client.GetAsync(API_URL);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
@@ -69,9 +62,9 @@ namespace APIVerve.Examples
 
         static async Task Main(string[] args)
         {
-            Console.WriteLine("📤 Calling Recipes API...\n");
+            Console.WriteLine("📤 Calling Recipe Generator API...\n");
 
-            var result = await CallRecipesAPI();
+            var result = await CallRecipeGeneratorAPI();
 
             if (result != null)
             {
