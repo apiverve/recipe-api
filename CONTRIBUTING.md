@@ -1,4 +1,4 @@
-# Contributing to Recipes API
+# Contributing to Recipe Generator API
 
 Thank you for your interest in contributing! This guide will help you get started.
 
