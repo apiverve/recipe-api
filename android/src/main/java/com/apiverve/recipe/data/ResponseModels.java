@@ -12,7 +12,7 @@
 //
 // Then you can deserialize a JSON string with
 //
-//     RecipesData data = Converter.fromJsonString(jsonString);
+//     RecipeGeneratorData data = Converter.fromJsonString(jsonString);
 
 package com.apiverve.recipe.data;
 
@@ -62,11 +62,11 @@ public class Converter {
     }
     // Serialize/deserialize helpers
 
-    public static RecipesData fromJsonString(String json) throws IOException {
+    public static RecipeGeneratorData fromJsonString(String json) throws IOException {
         return getObjectReader().readValue(json);
     }
 
-    public static String toJsonString(RecipesData obj) throws JsonProcessingException {
+    public static String toJsonString(RecipeGeneratorData obj) throws JsonProcessingException {
         return getObjectWriter().writeValueAsString(obj);
     }
 
@@ -87,8 +87,8 @@ public class Converter {
             }
         });
         mapper.registerModule(module);
-        reader = mapper.readerFor(RecipesData.class);
-        writer = mapper.writerFor(RecipesData.class);
+        reader = mapper.readerFor(RecipeGeneratorData.class);
+        writer = mapper.writerFor(RecipeGeneratorData.class);
     }
 
     private static ObjectReader getObjectReader() {
@@ -102,50 +102,53 @@ public class Converter {
     }
 }
 
-// RecipesData.java
+// RecipeGeneratorData.java
 
 package com.apiverve.recipe.data;
 
 import com.fasterxml.jackson.annotation.*;
 
-public class RecipesData {
-    private long count;
-    private Recipe[] recipes;
-
-    @JsonProperty("count")
-    public long getCount() { return count; }
-    @JsonProperty("count")
-    public void setCount(long value) { this.count = value; }
-
-    @JsonProperty("recipes")
-    public Recipe[] getRecipes() { return recipes; }
-    @JsonProperty("recipes")
-    public void setRecipes(Recipe[] value) { this.recipes = value; }
-}
-
-// Recipe.java
-
-package com.apiverve.recipe.data;
-
-import com.fasterxml.jackson.annotation.*;
-
-public class Recipe {
-    private String instructions;
+public class RecipeGeneratorData {
     private String name;
+    private String description;
     private String[] ingredients;
-
-    @JsonProperty("instructions")
-    public String getInstructions() { return instructions; }
-    @JsonProperty("instructions")
-    public void setInstructions(String value) { this.instructions = value; }
+    private String instructions;
+    private String prepTime;
+    private String cookTime;
+    private long servings;
 
     @JsonProperty("name")
     public String getName() { return name; }
     @JsonProperty("name")
     public void setName(String value) { this.name = value; }
 
+    @JsonProperty("description")
+    public String getDescription() { return description; }
+    @JsonProperty("description")
+    public void setDescription(String value) { this.description = value; }
+
     @JsonProperty("ingredients")
     public String[] getIngredients() { return ingredients; }
     @JsonProperty("ingredients")
     public void setIngredients(String[] value) { this.ingredients = value; }
+
+    @JsonProperty("instructions")
+    public String getInstructions() { return instructions; }
+    @JsonProperty("instructions")
+    public void setInstructions(String value) { this.instructions = value; }
+
+    @JsonProperty("prep_time")
+    public String getPrepTime() { return prepTime; }
+    @JsonProperty("prep_time")
+    public void setPrepTime(String value) { this.prepTime = value; }
+
+    @JsonProperty("cook_time")
+    public String getCookTime() { return cookTime; }
+    @JsonProperty("cook_time")
+    public void setCookTime(String value) { this.cookTime = value; }
+
+    @JsonProperty("servings")
+    public long getServings() { return servings; }
+    @JsonProperty("servings")
+    public void setServings(long value) { this.servings = value; }
 }
