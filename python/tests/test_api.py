@@ -1,5 +1,5 @@
 import unittest
-from apiverve_recipes.apiClient import RecipeAPIClient
+from apiverve_recipegenerator.apiClient import RecipeAPIClient
 from unittest.mock import patch
 
 class TestRecipeAPIClient(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestRecipeAPIClient(unittest.TestCase):
         self.api_key = 'test_api_key'
         self.client = RecipeAPIClient(self.api_key)
 
-    @patch('apiverve_recipes.apiClient.requests.get')
+    @patch('apiverve_recipegenerator.apiClient.requests.get')
     def test_make_request_success(self, mock_get):
         # Assuming there's an endpoint 'test_endpoint' for testing purposes
         mock_get.return_value.status_code = 200
@@ -16,7 +16,7 @@ class TestRecipeAPIClient(unittest.TestCase):
         response = self.client.get('test_endpoint')
         self.assertIsInstance(response, dict)
 
-    @patch('apiverve_recipes.apiClient.requests.get')
+    @patch('apiverve_recipegenerator.apiClient.requests.get')
     def test_make_request_failure(self, mock_get):
         # Assuming there's an endpoint 'test_endpoint' for testing purposes
         mock_get.return_value.status_code = 404
