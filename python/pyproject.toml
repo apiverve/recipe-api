@@ -1,17 +1,20 @@
 [project]
-name = "apiverve-recipes"
-version = "1.1.12"
+name = "apiverve-recipegenerator"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Recipes is a simple tool for getting recipe information. It returns information on various recipes."
-keywords = ["recipes", "recipes api", "recipes tool", "recipes software", "recipes service"]
+description = "Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings."
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
