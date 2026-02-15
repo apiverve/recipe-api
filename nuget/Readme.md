@@ -1,13 +1,13 @@
-APIVerve.API.Recipes API
+RecipeGenerator API
 ============
 
-Recipes is a simple tool for getting recipe information. It returns information on various recipes.
+Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [APIVerve.API.Recipes API](https://apiverve.com/marketplace/recipe)
+This is a .NET Wrapper for the [RecipeGenerator API](https://apiverve.com/marketplace/recipe?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -15,17 +15,17 @@ This is a .NET Wrapper for the [APIVerve.API.Recipes API](https://apiverve.com/m
 
 Using the .NET CLI:
 ```
-dotnet add package APIVerve.API.Recipes
+dotnet add package APIVerve.API.RecipeGenerator
 ```
 
 Using the Package Manager:
 ```
-nuget install APIVerve.API.Recipes
+nuget install APIVerve.API.RecipeGenerator
 ```
 
 Using the Package Manager Console:
 ```
-Install-Package APIVerve.API.Recipes
+Install-Package APIVerve.API.RecipeGenerator
 ```
 
 From within Visual Studio:
@@ -33,15 +33,15 @@ From within Visual Studio:
 1. Open the Solution Explorer
 2. Right-click on a project within your solution
 3. Click on Manage NuGet Packages
-4. Click on the Browse tab and search for "APIVerve.API.Recipes"
-5. Click on the APIVerve.API.Recipes package, select the appropriate version in the right-tab and click Install
+4. Click on the Browse tab and search for "APIVerve.API.RecipeGenerator"
+5. Click on the APIVerve.API.RecipeGenerator package, select the appropriate version in the right-tab and click Install
 
 ---
 
 ## Configuration
 
 Before using the recipe API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -58,10 +58,10 @@ class Program
     static async Task Main(string[] args)
     {
         // Initialize the API client
-        var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+        var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
         // Make the API call
@@ -92,17 +92,17 @@ class Program
 
 ## Usage
 
-The APIVerve.API.Recipes API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe).
+The RecipeGenerator API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe?utm_source=nuget&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-APIVerve.API.Recipes API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+RecipeGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
-var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 ```
 
 ---
@@ -122,10 +122,10 @@ public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+        var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -154,10 +154,10 @@ public class Example
 {
     public static void Main(string[] args)
     {
-        var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+        var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,10 +191,10 @@ public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+        var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
         try
@@ -243,14 +243,14 @@ public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
         // Configure retry behavior (max 3 retries)
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+        var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
         try
@@ -284,14 +284,14 @@ public class Example
 Add custom headers to your requests:
 
 ```csharp
-var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
 // Add custom headers
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -308,7 +308,7 @@ apiClient.ClearCustomHeaders();
 Enable logging for debugging:
 
 ```csharp
-var apiClient = new RecipesAPIClient("[YOUR_API_KEY]", isDebug: true);
+var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]", isDebug: true);
 
 // Or use a custom logger
 apiClient.SetLogger(message =>
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,14 +328,14 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 Customize retry behavior for failed requests:
 
 ```csharp
-var apiClient = new RecipesAPIClient("[YOUR_API_KEY]");
+var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
 // Set retry options
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,10 +346,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-using (var apiClient = new RecipesAPIClient("[YOUR_API_KEY]"))
+using (var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]"))
 {
-    var queryOptions = new RecipesQueryOptions {
-  name = "cake"
+    var queryOptions = new QueryOptions {
+  name = "chicken fajitas"
 };
     var response = await apiClient.ExecuteAsync(queryOptions);
     Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented));
@@ -366,33 +366,24 @@ using (var apiClient = new RecipesAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "count": 1,
-    "recipes": [
-      {
-        "instructions": "Heat the oil in a large, non-stick frying pan or wok and stir-fry the chicken and peppers for 2 mins. Sprinkle over the spices and cook for 30 secs more, stirring. Tip the tomatoes into the pan and stir in the chipotle paste. Simmer for 5 mins or until the sauce is thick and glossy, stirring regularly. Stir in the spring onions and coriander, cook for 1 min more, then remove from the heat and leave to cool. Cut the tortillas into quarters, then cut each quarter into three pieces, so you have 36 triangles. Place 1 tsp of the chicken mixture and a little cheese at the widest end of a triangle. Roll the pointed end of the triangle around the filling and secure with a cocktail stick. Place on a baking tray lined with baking parchment. Fill and roll the other triangles. Cover with cling film and chill for up to 8 hrs until ready to reheat. To make the dip, mash all the ingredients in a bowl until almost smooth. Cover the surface of the dip with cling film and chill for up to 24 hrs. When ready to serve, heat oven to 200C/180C fan/gas 6. Uncover the fajitas and bake for 6-8 mins or until hot throughout. Serve with the guacamole.",
-        "name": "Mini Chicken Fajitas",
-        "ingredients": [
-          "2 tbsp sunflower oil",
-          "2 skinless chicken breasts, cut into 1½ cm/½ in chunks",
-          "1 red pepper, deseeded and cut into 1½ cm/½ in chunks",
-          "1 yellow pepper, deseeded and cut into 1½ cm/½ in chunks",
-          "1 tsp ground cumin",
-          "1 tsp ground coriander",
-          "¼ tsp hot chilli powder",
-          "227g can chopped tomatoes",
-          "2 tbsp chipotle paste",
-          "4 spring onions, trimmed and thinly sliced",
-          "large pack coriander, leaves chopped",
-          "3 large flour tortillas",
-          "75g ready-grated mozzarella",
-          "1 ripe avocado, stoned and peeled",
-          "juice 1 large lime",
-          "1 garlic clove, crushed",
-          "2 heaped tbsp finely chopped coriander",
-          "36 cocktail sticks"
-        ]
-      }
-    ]
+    "name": "Chicken Fajitas",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.",
+    "ingredients": [
+      "1.5 pounds boneless, skinless chicken breasts, sliced into strips",
+      "1 red bell pepper, sliced",
+      "1 green bell pepper, sliced",
+      "1 yellow bell pepper, sliced",
+      "1 large onion, sliced",
+      "2 tablespoons olive oil",
+      "1 packet (1 ounce) fajita seasoning",
+      "1/2 cup water",
+      "12 flour tortillas",
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro"
+    ],
+    "instructions": "1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.\n5. Warm the tortillas according to package directions.\n6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.",
+    "prep_time": "15 minutes",
+    "cook_time": "20 minutes",
+    "servings": 4
   }
 }
 ```
@@ -401,7 +392,7 @@ using (var apiClient = new RecipesAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
 
 ---
 
@@ -412,14 +403,14 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
 
 ---
 
 ## License
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2025 APIVerve, and EvlarSoft LLC
+Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
