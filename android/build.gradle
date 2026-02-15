@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.apiverve'
-version = '1.1.12'
+version = '1.1.13'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -20,13 +20,13 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.apiverve'
             artifactId = 'recipe-api'
-            version = '1.1.12'
+            version = '1.1.13'
 
             from components.java
 
             pom {
-                name = 'Recipes'
-                description = 'Recipes is a simple tool for getting recipe information. It returns information on various recipes.'
+                name = 'Recipe Generator'
+                description = 'Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.'
                 url = 'https://apiverve.com'
 
                 licenses {
