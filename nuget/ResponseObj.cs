@@ -6,7 +6,7 @@
 //
 //    var responseObj = ResponseObj.FromJson(jsonString);
 
-namespace APIVerve.API.Recipes
+namespace APIVerve.API.RecipeGenerator
 {
     using System;
     using System.Collections.Generic;
@@ -29,22 +29,25 @@ namespace APIVerve.API.Recipes
 
     public partial class Data
     {
-        [JsonProperty("count")]
-        public long Count { get; set; }
-
-        [JsonProperty("recipes")]
-        public Recipe[] Recipes { get; set; }
-    }
-
-    public partial class Recipe
-    {
-        [JsonProperty("instructions")]
-        public string Instructions { get; set; }
-
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
         [JsonProperty("ingredients")]
         public string[] Ingredients { get; set; }
+
+        [JsonProperty("instructions")]
+        public string Instructions { get; set; }
+
+        [JsonProperty("prep_time")]
+        public string PrepTime { get; set; }
+
+        [JsonProperty("cook_time")]
+        public string CookTime { get; set; }
+
+        [JsonProperty("servings")]
+        public long Servings { get; set; }
     }
 }
