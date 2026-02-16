@@ -233,8 +233,9 @@ from apiverve_recipegenerator.apiClient import RecipeAPIClient
 
 api = RecipeAPIClient("[YOUR_API_KEY]")
 
+query = { "name": "chicken fajitas" }
+
 try:
-    query = { "name": "chicken fajitas" }
     result = api.execute(query)
     print(result)
 finally:
