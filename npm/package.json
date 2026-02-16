@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/recipe",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.",
   "main": "index.js",
   "types": "index.d.ts",
