@@ -123,20 +123,19 @@ async function makeRequest() {
   "error": null,
   "data": {
     "name": "Chicken Fajitas",
-    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas.",
     "ingredients": [
-      "1.5 pounds boneless, skinless chicken breasts, sliced into strips",
+      "1.5 pounds boneless, skinless chicken breasts, sliced",
       "1 red bell pepper, sliced",
       "1 green bell pepper, sliced",
-      "1 yellow bell pepper, sliced",
       "1 large onion, sliced",
       "2 tablespoons olive oil",
       "1 packet (1 ounce) fajita seasoning",
       "1/2 cup water",
       "12 flour tortillas",
-      "Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro"
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese"
     ],
-    "instructions": "1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.\n5. Warm the tortillas according to package directions.\n6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.",
+    "instructions": "1. In a bowl, combine chicken with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add bell peppers and onions to the skillet. Cook until softened, about 5-7 minutes.\n5. Warm tortillas according to package instructions.\n6. Serve chicken and vegetables in warm tortillas with desired toppings.",
     "prep_time": "15 minutes",
     "cook_time": "20 minutes",
     "servings": 4
