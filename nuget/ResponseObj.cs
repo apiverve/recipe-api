@@ -25,6 +25,9 @@ namespace APIVerve.API.RecipeGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -48,6 +51,18 @@ namespace APIVerve.API.RecipeGenerator
         public string CookTime { get; set; }
 
         [JsonProperty("servings")]
-        public long Servings { get; set; }
+        public long? Servings { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
