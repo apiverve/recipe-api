@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RecipeGenerator;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+        var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RecipeGenerator;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+        var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RecipeGenerator;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+        var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RecipeGenerator;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+        var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RecipeGenerator;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+        var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    name = "chicken fajitas"
+var queryOptions = new RecipeGeneratorQueryOptions {
+    Name = "chicken fajitas"
 };
 
 using (var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -368,20 +368,19 @@ using (var apiClient = new RecipeGeneratorAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "name": "Chicken Fajitas",
-    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas.",
     "ingredients": [
-      "1.5 pounds boneless, skinless chicken breasts, sliced into strips",
+      "1.5 pounds boneless, skinless chicken breasts, sliced",
       "1 red bell pepper, sliced",
       "1 green bell pepper, sliced",
-      "1 yellow bell pepper, sliced",
       "1 large onion, sliced",
       "2 tablespoons olive oil",
       "1 packet (1 ounce) fajita seasoning",
       "1/2 cup water",
       "12 flour tortillas",
-      "Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro"
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese"
     ],
-    "instructions": "1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.\n5. Warm the tortillas according to package directions.\n6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.",
+    "instructions": "1. In a bowl, combine chicken with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add bell peppers and onions to the skillet. Cook until softened, about 5-7 minutes.\n5. Warm tortillas according to package instructions.\n6. Serve chicken and vegetables in warm tortillas with desired toppings.",
     "prep_time": "15 minutes",
     "cook_time": "20 minutes",
     "servings": 4
