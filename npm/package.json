@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/recipe",
-  "version": "1.2.0",
-  "description": "Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.",
+  "version": "1.2.2",
+  "description": "Recipe Generator creates complete cooking recipes from a dish title or meal idea. Pass any dish name to get structured ingredients with quantities, step-by-step instructions, prep time, cook time, and serving counts.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/recipe-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/recipe?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/recipe?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
