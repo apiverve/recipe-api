@@ -67,7 +67,7 @@ namespace APIVerve.API.RecipeGenerator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "name", new ValidationRule { Type = "string", Required = true } }
+            { "name", new ValidationRule { Type = "string", Required = true, MaxLength = 200 } }
         };
 
         /// <summary>Format validation patterns</summary>
