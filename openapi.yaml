@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Recipe Generator
   description: >-
-    Recipe Generator is an AI-powered tool for generating detailed recipes. It
-    returns complete recipes with ingredients, instructions, prep time, cook
-    time, and servings.
+    Recipe Generator creates complete cooking recipes from a dish title or meal
+    idea. Pass any dish name to get structured ingredients with quantities,
+    step-by-step instructions, prep time, cook time, and serving counts.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/recipe:
     get:
-      summary: Generate Recipe
+      summary: Recipe Generator
       description: >-
         Recipe Generator is an AI-powered tool for generating detailed recipes.
         It returns complete recipes with ingredients, instructions, prep time,

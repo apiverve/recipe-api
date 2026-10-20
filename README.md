@@ -1,13 +1,13 @@
-# [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
+Recipe Generator creates complete cooking recipes from a dish title or meal idea. Pass any dish name to get structured ingredients with quantities, step-by-step instructions, prep time, cook time, and serving counts.
 
 The Recipe Generator API provides a simple, reliable way to integrate recipe generator functionality into your applications. Built for developers who need production-ready recipe generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/recipe-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,44 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Recipe Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "name": "Chicken Fajitas",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas.",
+    "ingredients": [
+      "1.5 pounds boneless, skinless chicken breasts, sliced",
+      "1 red bell pepper, sliced",
+      "1 green bell pepper, sliced",
+      "1 large onion, sliced",
+      "2 tablespoons olive oil",
+      "1 packet (1 ounce) fajita seasoning",
+      "1/2 cup water",
+      "12 flour tortillas",
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese"
+    ],
+    "instructions": "1. In a bowl, combine chicken with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add bell peppers and onions to the skillet. Cook until softened, about 5-7 minutes.\n5. Warm tortillas according to package instructions.\n6. Serve chicken and vegetables in warm tortillas with desired toppings.",
+    "prep_time": "15 minutes",
+    "cook_time": "20 minutes",
+    "servings": 4
+  }
 }
 ```
 
@@ -203,7 +236,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
