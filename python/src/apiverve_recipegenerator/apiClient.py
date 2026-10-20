@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,7 @@ class ValidationError(RecipeAPIClientError):
 class RecipeAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "name": {"type": "string", "required": True}
+        "name": {"type": "string", "required": True, "maxLength": 200}
     }
 
     # Format validation patterns

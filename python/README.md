@@ -1,13 +1,12 @@
 Recipe Generator API
 ============
 
-Recipe Generator is an AI-powered tool for generating detailed recipes. It returns complete recipes with ingredients, instructions, prep time, cook time, and servings.
+Recipe Generator creates complete cooking recipes from a dish title or meal idea. Pass any dish name to get structured ingredients with quantities, step-by-step instructions, prep time, cook time, and serving counts.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-recipegenerator.svg)](https://pypi.org/project/apiverve-recipegenerator/)
+
+This is a Python wrapper for the [Recipe Generator API](https://apiverve.com/marketplace/recipe?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-recipegenerator
 
 ## Configuration
 
-Before using the recipe API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Recipe Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Recipe Generator API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe?utm_source=pypi&utm_medium=readme).
+The Recipe Generator API documentation is found here: [https://docs.apiverve.com/ref/recipe](https://docs.apiverve.com/ref/recipe?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -103,20 +102,19 @@ print(result)
   "error": null,
   "data": {
     "name": "Chicken Fajitas",
-    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas and your favorite toppings.",
+    "description": "A flavorful and easy-to-make dish with marinated chicken, bell peppers, and onions, served with warm tortillas.",
     "ingredients": [
-      "1.5 pounds boneless, skinless chicken breasts, sliced into strips",
+      "1.5 pounds boneless, skinless chicken breasts, sliced",
       "1 red bell pepper, sliced",
       "1 green bell pepper, sliced",
-      "1 yellow bell pepper, sliced",
       "1 large onion, sliced",
       "2 tablespoons olive oil",
       "1 packet (1 ounce) fajita seasoning",
       "1/2 cup water",
       "12 flour tortillas",
-      "Optional toppings: sour cream, guacamole, salsa, shredded cheese, chopped cilantro"
+      "Optional toppings: sour cream, guacamole, salsa, shredded cheese"
     ],
-    "instructions": "1. In a bowl, combine the chicken strips with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add the bell peppers and onion to the skillet. Cook, stirring occasionally, until softened, about 5-7 minutes.\n5. Warm the tortillas according to package directions.\n6. Serve the chicken and vegetables in warm tortillas with your favorite toppings.",
+    "instructions": "1. In a bowl, combine chicken with fajita seasoning and water. Marinate for at least 15 minutes.\n2. Heat olive oil in a large skillet or cast-iron pan over medium-high heat.\n3. Add the chicken and cook until browned and cooked through, about 5-7 minutes.\n4. Add bell peppers and onions to the skillet. Cook until softened, about 5-7 minutes.\n5. Warm tortillas according to package instructions.\n6. Serve chicken and vegetables in warm tortillas with desired toppings.",
     "prep_time": "15 minutes",
     "cook_time": "20 minutes",
     "servings": 4
@@ -247,7 +245,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -258,12 +256,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
