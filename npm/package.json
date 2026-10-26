@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/recipe",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Recipe Generator creates complete cooking recipes from a dish title or meal idea. Pass any dish name to get structured ingredients with quantities, step-by-step instructions, prep time, cook time, and serving counts.",
   "main": "index.js",
   "types": "index.d.ts",
